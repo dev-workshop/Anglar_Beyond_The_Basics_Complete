@@ -1,0 +1,11 @@
+{
+    "name": "dwi-angularjs-beyond-the-setup",
+    "version": "0.3.2",
+    "devDependencies": {
+        "angular": "1.2.16",
+        "angular-bootstrap": "0.11.0",
+        "angular-route": "1.2.16",
+        "bootstrap-css-only": "3.1.1"
+    },
+    "dependencies": {}
+}

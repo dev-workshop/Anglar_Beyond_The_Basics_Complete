@@ -1,0 +1,21 @@
+<div id="login" class="row">
+    <div class="col-md-4">
+        <h2>{{ctrl.title}}</h2>
+
+        <!-- ng-show directive to control visibility, when the errorMsg is populated it will show -->
+        <div class="alert alert-warning" ng-show="errorMsg">{{errorMsg}}</div>
+
+        <form role="form" ng-submit="authenticate()">
+            <div class="form-group">
+                <label class="control-label" for="exampleUserID1">User ID:</label>
+                <input type="text" class="form-control" id="exampleUserID1" placeholder="User ID" ng-model="username" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="exampleInputPassword1">Password:</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password" required="">
+            </div>
+            <button type="submit"  class="btn btn-primary btn-lg btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+

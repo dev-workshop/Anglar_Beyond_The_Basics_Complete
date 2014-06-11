@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="devworkshop">
+<head>
+    <title>AngularJS beyond the setup</title>
+    <meta http-equiv="content-script-type" content="text/javascript">
+
+    <link rel="stylesheet" href="../bower_components/bootstrap-css-only/css/bootstrap.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap-css-only/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body>
+<div class="container">
+<header>
+    <img src="images/logo.png">
+    <h2>Weather that you can count on!</h2>
+</header>
+<!-- Menu -->
+<nav class="navbar navbar-default" role="navigation" ng-controller="MenuCtrl">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">Dev Workshop</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" ng-repeat="menu in menus">
+                <li ng-class="getClass(menu.link)"><a href="#{{menu.link}}">{{menu.title}}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Main View -->
+<div id="view"  ng-view></div>
+
+
+</div>
+<footer>All Rights Reserved Dev Workshop LLC, Copyright &copy; 2014</footer>
+<!-- Library -->
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<!-- Application -->
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/DataModel.js"></script>
+
+<script type="text/javascript" src="app/menu/menu.js"></script>
+
+<script type="text/javascript" src="app/auth/auth.js"></script>
+
+<script type="text/javascript" src="app/module1/module1.js"></script>
+
+<script type="text/javascript" src="app/weather/service.js"></script>
+<script type="text/javascript" src="app/weather/weather.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<div ng-controller="HomeCtrl">
+    <h1>Weather Module Home</h1>
+
+
+    <alert ng-show="apiError" type="danger">{{apiError}}</alert>
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Search</h3>
+            <form novalidate class="simple-form">
+                <input ng-model="searchCriteria" placeholder="City or Zip code"/>
+                <button ng-click="locationSearch()">Search</button>
+            </form>
+            <!-- Search results-->
+            <ul id="location">
+                <li ng-repeat="location in searchResults">
+                    <div>{{location.name}} </div>
+                    <div>{{location.type}}</div>
+                    <div>{{location.c}}</div>
+                    <div>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="getCurrentConditions(location)">
+                        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                    </button></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <div ng-show="currentConditions">
+                <h3>{{selectedLocation.name}}</h3>
+                <div>Station ID: {{currentConditions.station_id}}</div>
+                <div>{{currentConditions.weather}}</div>
+                <div>{{currentConditions.temperature_string}}</div>
+                <div>{{currentConditions.relative_humidity}}</div>
+                <div>{{currentConditions.wind_string}}</div>
+                <div>{{currentConditions.wind_dir}}</div>
+                <div>{{currentConditions.dewpoint_string}}</div>
+                <div><img ng-src="http://icons.wxug.com/i/c/k/partlycloudy.gif" /></div>
+
+
+                <a href="#/weather/listView">10 day forecast</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
